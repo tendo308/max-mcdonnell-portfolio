@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Max McDonnell — Dero Dazza’s Dirty Dash</title>
+    <meta
+      name="description"
+      content="Case study: Dero Dazza’s Dirty Dash (capstone). Movement systems, level design, UI, and playtest analytics."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="capstoneStyles.css" />
+
+    <!-- Minimal helpers for YouTube embeds + screenshots.
+         (Move these into capstoneStyles.css later if you want.) -->
+    <style>
+      /* Replaces <video> with a responsive 16:9 YouTube area */
+      .ytAuto {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #000;
+        overflow: hidden;
+      }
+      .ytAuto iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        pointer-events: none;
+      }
+
+      /* For hover-to-play tiles (same footprint as your posters) */
+      .ytEmbed {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .ytEmbed iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        pointer-events: none; /* keeps tile clickable if you ever wrap in <a> */
+      }
+
+      /* Simple screenshot formatting (if not already in capstoneStyles.css) */
+      .screenshot__image {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-top: 1rem;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- TOP BAR -->
+    <header class="topbar" role="banner">
+      <div class="wrap topbar__inner">
+        <div class="brand">
+          <div class="brand__name">
+            <a href="index.html" rel="noreferrer">Max McDonnell</a>
+          </div>
+          <div class="brand__spec">Gameplay / Level Designer and Programmer</div>
+        </div>
+
+        <div class="topbar__right">
+          <nav class="nav" aria-label="Links">
+            <a href="index.html">Home</a>
+
+            <a
+              href="https://www.linkedin.com/in/max-mcdonnell-1b6b4a391/"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+
+            <a
+              href="https://max-mcdonnell.itch.io/"
+              target="_blank"
+              rel="noreferrer"
+              >itch.io</a
+            >
+
+            <a
+              href="assets/Max_McDonnell_Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >Resume</a
+            >
+
+            <a href="aboutme.html" rel="noreferrer">About me</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="wrap" tabindex="-1">
+      <!-- HERO -->
+      <section class="section">
+        <div class="block">
+          <!-- Replace data-yt-hero with your YouTube ID -->
+          <div class="ytAuto" data-yt-hero="YOUR_HERO_VIDEO_ID"></div>
+        </div>
+
+        <div class="block block--gap">
+          <p class="lead"><strong>Dero Dazza’s Dirty Dash (2025)</strong></p>
+          <h4 class="h4">Winner of RMIT’s Program Excellence Award</h4>
+
+          <p>
+            High-octane first-person speedrunner platformer. Play as the
+            Australian eshay legend Dero Dazza, blasting through the outer
+            suburbs of Melbourne.
+            <a
+              class="capstone__exhibit muted"
+              href="https://max-mcdonnell.itch.io/dero-dazzas-dirty-dash"
+              target="_blank"
+              rel="noreferrer"
+              >(Download it on itch.io)</a
+            >
+          </p>
+
+          <p class="capstone__exhibit muted">
+            Exhibited at the
+            <a
+              href="https://www.acmi.net.au/whats-on/acmi-rmit-audience-lab/nov-2025/"
+              target="_blank"
+              rel="noreferrer"
+              >ACMI Audience Lab (2025)</a
+            >
+            and
+            <a
+              href="https://www.rmitgamedesignshowcase.com/"
+              target="_blank"
+              rel="noreferrer"
+              >RMIT Grad Show (2025)</a
+            >.
+          </p>
+
+          <div class="projectCard__meta muted">
+            ⏱ 13 weeks • Unity • C# • GitHub • Blender • Excel • Photoshop •
+            Substance Painter
+          </div>
+
+          <!-- AT A GLANCE -->
+          <div style="margin-top: 0.9rem">
+            <ul class="bullets">
+              <li>
+                <strong class="at_a_glance">Role:</strong> Lead gameplay & level
+                designer, lead programmer, SFX, UI and VFX designer.
+              </li>
+              <li><strong class="at_a_glance">Team:</strong> 6 people</li>
+              <li>
+                <strong class="at_a_glance">Playtesting:</strong> 100+/day
+                playthroughs at ACMI • 200+ plays at RMIT Grad Show
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESPONSIBILITIES -->
+      <section class="section">
+        <h2 class="h2">My Responsibilities</h2>
+
+        <div class="block">
+          <p>
+            Here’s what I was responsible for during our 13-week development
+            period:
+          </p>
+
+          <ul class="bullets">
+            <li>
+              Designing mechanics (slide, mid-air slam, drift, dash, wall-run,
+              trophy system)
+            </li>
+            <li>Gameplay programming (C#)</li>
+            <li>GitHub repository management</li>
+            <li>Level design support + environment composition</li>
+            <li>UI/UX polish, shader/post tuning, sound design</li>
+            <li>Team task management</li>
+            <li>
+              Playtests + analytics (heatmaps/graphs) and exhibition data
+              collection
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- WHAT I SHIPPED -->
+      <section class="section">
+        <h2 class="h2">What I Shipped</h2>
+
+        <div class="block">
+          <ul class="bullets">
+            <li>
+              Implemented the full movement system (slide / slam / drift / dash
+              / surface alignment) and tuned it for speedrunning.
+            </li>
+            <li>
+              Built 4 Australian-style environments (placing buildings, trees,
+              graffiti, signs, and sculpting terrain).
+            </li>
+            <li>
+              Built a modular road tileset workflow to speed up level iteration.
+            </li>
+            <li>
+              Developed an analytics pipeline (CSV logging → heatmaps/graphs)
+              for playtest and exhibition insights.
+            </li>
+            <li>
+              Created key UI flows and polish: level select, trophies, settings,
+              responsive tutorial prompts by input device.
+            </li>
+            <li>Implemented adaptive shaders, post-processing, and VFX.</li>
+            <li>Built speed-adaptive sound effects.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- TARGET AUDIENCE -->
+      <section class="section">
+        <h2 class="h2">Target Audience</h2>
+
+        <div class="block">
+          <p>
+            From the start, the target audience was competitive players who
+            enjoy beating best times and mastering mechanics. Therefore, I
+            designed systems that reward speed and precision. Because movement
+            is the core focus, I kept the in-level gameplay loop simple to avoid
+            overwhelming first-time players.
+          </p>
+
+          <p>
+            <strong class="at_a_glance"
+              >Spawn → Explore map and collect 3 items → Unlock end goal → Finish
+              → Retry for PB + trophy</strong
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- MOVEMENT -->
+      <section class="section">
+        <h2 class="h2">Movement Systems</h2>
+
+        <div class="block">
+          <div class="moveGrid">
+            <div class="movePanel hoverPreview" data-yt="YOUR_SLIDE_VIDEO_ID">
+              <img
+                class="hoverPreview__poster movePanel__media"
+                src="assets/move_slide_poster.jpg"
+                alt="Slide"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+              <div class="movePanel__title">Slide</div>
+            </div>
+
+            <div class="movePanel hoverPreview" data-yt="YOUR_SLAM_VIDEO_ID">
+              <img
+                class="hoverPreview__poster movePanel__media"
+                src="assets/move_slam_poster.jpg"
+                alt="Mid-air slam"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+              <div class="movePanel__title">Mid-Air Slam</div>
+            </div>
+
+            <div class="movePanel hoverPreview" data-yt="YOUR_DRIFT_VIDEO_ID">
+              <img
+                class="hoverPreview__poster movePanel__media"
+                src="assets/move_drift_poster.jpg"
+                alt="Drift and boost"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+              <div class="movePanel__title">Drift + Boost</div>
+            </div>
+
+            <div class="movePanel hoverPreview" data-yt="YOUR_DASH_VIDEO_ID">
+              <img
+                class="hoverPreview__poster movePanel__media"
+                src="assets/move_dash_poster.jpg"
+                alt="Dash"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+              <div class="movePanel__title">Dash</div>
+            </div>
+          </div>
+
+          <!-- QUICK DESIGN CALLOUTS -->
+          <div style="margin-top: 1rem">
+            <h4 class="h4">Design challenges</h4>
+            <ul class="bullets">
+              <li>
+                <strong>Problem:</strong> Maintain speed without losing control
+                → <strong>Solution:</strong> tuned friction/air control + clear
+                “commitment” windows for each mechanic.
+              </li>
+              <li>
+                <strong>Problem:</strong> Downforce/surface alignment can cause
+                motion sickness → <strong>Solution:</strong> camera smoothing,
+                interpolation, and conservative rotation limits.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SPEED REWARDS -->
+      <section class="section">
+        <h2 class="h2">Rewarding Speed</h2>
+
+        <div class="block">
+          <p>
+            To reward players for gaining speed, I added reactive speed lines, a
+            subtle chromatic aberration + FOV boost, a speed-based pitch-changing
+            wind sound, and trophies for beating levels under target times.
+          </p>
+
+          <div class="moveGrid">
+            <div class="movePanel">
+              <img
+                class="movePanel__media"
+                src="assets/speedVisuals.jpg"
+                alt="Speed visuals"
+              />
+              <div class="movePanel__title">Speed Visuals</div>
+            </div>
+
+            <div class="movePanel">
+              <img
+                class="movePanel__media"
+                src="assets/trophies.jpg"
+                alt="Trophies"
+              />
+              <div class="movePanel__title">Trophies</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEVEL DESIGN -->
+      <section class="section">
+        <h2 class="h2">Level Design</h2>
+
+        <div class="block">
+          <p>
+            In collaboration with our main level designer, we structured the
+            game to introduce and test one movement mechanic per level. After
+            extensive playtesting, we learned that at high speed, strong
+            sightlines are essential. We used signage, varying road heights,
+            intro cutscenes, and a minimap to keep players oriented.
+          </p>
+
+          <div class="moveGrid">
+            <div class="movePanel">
+              <img class="movePanel__media" src="assets/signage.jpg" alt="Signage" />
+              <div class="movePanel__title">Signage</div>
+            </div>
+
+            <div class="movePanel">
+              <img
+                class="movePanel__media"
+                src="assets/varyingRoadHeights.jpg"
+                alt="Varying road heights"
+              />
+              <div class="movePanel__title">Varying Road Heights</div>
+            </div>
+
+            <div class="movePanel">
+              <img
+                class="movePanel__media"
+                src="assets/introCutscene.jpg"
+                alt="Intro cutscenes"
+              />
+              <div class="movePanel__title">Intro Cutscenes</div>
+            </div>
+
+            <div class="movePanel">
+              <img class="movePanel__media" src="assets/minimap.jpg" alt="Minimap" />
+              <div class="movePanel__title">Minimap</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ITERATION -->
+      <section class="section">
+        <h2 class="h2">Iteration</h2>
+
+        <div class="block">
+          <p>
+            Early on, we had many competing mechanic ideas (including time
+            changing based on speed). To keep scope realistic and the core loop
+            readable, I trimmed features that didn’t directly support
+            speedrunning clarity and focused on movement mastery.
+          </p>
+
+          <p>
+            For level iteration, playtests often revealed moments where players
+            didn’t know where to go. A major breakthrough was switching from
+            Unity’s ProBuilder (slow to iterate for our needs) to a snap-together
+            road tileset. This also enabled smooth slopes, which complemented
+            the surface alignment physics.
+          </p>
+
+          <img
+            class="screenshot__image"
+            src="assets/iteration/roadpieces.jpg"
+            alt="Road tileset pieces used for iteration"
+          />
+        </div>
+      </section>
+
+      <!-- EXHIBITION PLAYTESTING -->
+      <section class="section">
+        <h2 class="h2">Exhibition Playtesting</h2>
+
+        <div class="block">
+          <p>
+            Every time we ran playtests, new issues emerged—often related to
+            beginner accessibility. Players would get lost or miss when to use a
+            specific movement mechanic, so we continuously iterated on the levels.
+          </p>
+
+          <p>
+            Before the ACMI exhibition, I built a system that collected level
+            completion time and player location data to identify where players
+            were getting lost or losing large amounts of speed. It also helped
+            reveal common routes and skill differences.
+          </p>
+
+          <!-- SUB: GRAPHS -->
+          <div class="subSection">
+            <p class="lead"><strong>Graphs</strong></p>
+            <p class="muted">
+              This data was gathered from 100+ playthroughs, mostly from people
+              who had never played the game before.
+            </p>
+
+            <div class="graphStack">
+              <div class="graphRow">
+                <img
+                  class="graphRow__img"
+                  src="assets/graphs/graph1.jpg"
+                  alt="Completion time graph"
+                />
+                <div class="graphRow__text">
+                  <div class="graphRow__title">Completion Time</div>
+                  <p class="muted">
+                    This suggests which levels could benefit from length adjustments.
+                    Our goal was for most first clears to be achievable in under a minute.
+                  </p>
+                  <p class="muted">
+                    Surprisingly, L4D had the fastest completion time despite being the hardest.
+                    This may be because players were more comfortable with the controls by then,
+                    so more testing would be needed to confirm.
+                  </p>
+                </div>
+              </div>
+
+              <div class="graphRow">
+                <img
+                  class="graphRow__img"
+                  src="assets/graphs/graph2.jpg"
+                  alt="Average speed graph"
+                />
+                <div class="graphRow__text">
+                  <div class="graphRow__title">Average Speed</div>
+                  <p class="muted">
+                    Average speed increases per level, which makes sense: each new mechanic
+                    expands the player’s options for building and maintaining speed.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUB: HEATMAPS -->
+          <div class="subSection">
+            <p class="lead"><strong>Heatmaps (Level 1)</strong></p>
+            <p class="muted">
+              I wrote a script that samples the player’s X/Z position over time and saves it to a CSV.
+              I then built a separate tool to interpret that data and generate top-down heatmaps.
+            </p>
+
+            <div class="heatmapStack">
+              <div class="heatmapRow">
+                <img
+                  class="heatmapRow__img"
+                  src="assets/heatmaps/lvl1/lvl1_slowest.jpg"
+                  alt="Level 1 slowest 25%"
+                />
+                <div class="heatmapRow__text">
+                  <div class="heatmapRow__title">Slowest 25% of players</div>
+                  <p class="muted">
+                    This shows much higher route variation. Slower players attempted corner-cuts
+                    but often did so inefficiently, and spent more time in the central bowl/slope road area.
+                  </p>
+                </div>
+              </div>
+
+              <div class="heatmapRow">
+                <img
+                  class="heatmapRow__img"
+                  src="assets/heatmaps/lvl1/lvl1_fastest.jpg"
+                  alt="Level 1 fastest 25%"
+                />
+                <div class="heatmapRow__text">
+                  <div class="heatmapRow__title">Fastest 25% of players</div>
+                  <p class="muted">
+                    This shows much more consistency. The red/pink line highlights the single fastest route recorded.
+                  </p>
+                  <p class="muted">
+                    Interestingly, it only includes one major skip over the bottom-right building—most of the optimal run stays on the road.
+                  </p>
+                </div>
+              </div>
+
+              <div class="heatmapRow">
+                <img
+                  class="heatmapRow__img"
+                  src="assets/heatmaps/lvl1/lvl1_bumps.jpg"
+                  alt="Level 1 bump spots"
+                />
+                <div class="heatmapRow__text">
+                  <div class="heatmapRow__title">Bump Spots</div>
+                  <p class="muted">
+                    These are locations where players lost a lot of speed at once.
+                    This helped identify readability/collision issues where players assumed a path was clear but collided.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- POLISH / SETTINGS -->
+      <section class="section">
+        <h2 class="h2">Polish / Settings</h2>
+
+        <div class="block">
+          <p>
+            With limited time, I still wanted to push polish—especially UI.
+            Inspired by Persona 5, I used angular layouts and two-tone text.
+            I used More Mountains Feel to add responsive hover/click feedback.
+            Finally, I implemented mouse+keyboard and controller support, including
+            dynamically swapping tutorial prompts based on the current input device.
+          </p>
+
+          <div class="moveGrid">
+            <div class="movePanel hoverPreview" data-yt="YOUR_OPTIONS_VIDEO_ID">
+              <img
+                class="hoverPreview__poster movePanel__media"
+                src="assets/options_open_poster.jpg"
+                alt="Options menu"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+              <div class="movePanel__title">Options</div>
+            </div>
+
+            <div class="movePanel hoverPreview" data-yt="YOUR_LEVELSELECT_VIDEO_ID">
+              <img
+                class="hoverPreview__poster movePanel__media"
+                src="assets/level_select_poster.jpg"
+                alt="Level select screen"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+              <div class="movePanel__title">Level Select</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORLD BUILDING -->
+      <section class="section">
+        <h2 class="h2">World Building</h2>
+
+        <div class="block">
+          <p>
+            Aligning with our Melbourne-suburb theme, I was in charge of using the road pieces
+            laid out by the main level designer and the models/textures provided by our artists
+            to populate and dress the scenes.
+          </p>
+
+          <p>
+            Having lived my whole life in places like this, inspiration was close by—I often went
+            on walks around my suburb taking reference photos. Our group also went on hikes for
+            landscape inspiration.
+          </p>
+
+          <p>
+            Here are some screenshots from the levels that show off the environment work I did:
+          </p>
+
+          <img
+            class="screenshot__image"
+            src="assets/environment/screenshot1.jpg"
+            alt="Environment screenshot 1"
+          />
+          <img
+            class="screenshot__image"
+            src="assets/environment/screenshot2.jpg"
+            alt="Environment screenshot 2"
+          />
+          <img
+            class="screenshot__image"
+            src="assets/environment/screenshot6.jpg"
+            alt="Environment screenshot 3"
+          />
+          <img
+            class="screenshot__image"
+            src="assets/environment/screenshot4.jpg"
+            alt="Environment screenshot 4"
+          />
+          <img
+            class="screenshot__image"
+            src="assets/environment/screenshot5.jpg"
+            alt="Environment screenshot 5"
+          />
+          <img
+            class="screenshot__image"
+            src="assets/environment/screenshot3.jpg"
+            alt="Environment screenshot 6"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p class="footer__text">
+          © <span id="year"></span> Max McDonnell. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // --- YouTube embed helpers ---
+      const ytSrc = (id, { autoplay = 1 } = {}) => {
+        const base = "https://www.youtube-nocookie.com/embed/";
+        const params = new URLSearchParams({
+          autoplay: String(autoplay),
+          mute: "1",
+          controls: "0",
+          rel: "0",
+          modestbranding: "1",
+          playsinline: "1",
+          iv_load_policy: "3",
+          loop: "1",
+          playlist: id, // required for looping
+        });
+        return `${base}${id}?${params.toString()}`;
+      };
+
+      const injectIframe = (hostEl, id, { autoplay = 1 } = {}) => {
+        if (!hostEl || !id) return null;
+        if (hostEl.querySelector("iframe")) return hostEl.querySelector("iframe");
+
+        const iframe = document.createElement("iframe");
+        iframe.src = ytSrc(id, { autoplay });
+        iframe.title = "YouTube video preview";
+        iframe.loading = "lazy";
+        iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        hostEl.appendChild(iframe);
+        return iframe;
+      };
+
+      const clearIframe = (hostEl) => {
+        const iframe = hostEl?.querySelector("iframe");
+        if (iframe) iframe.remove();
+      };
+
+      window.addEventListener("DOMContentLoaded", () => {
+        // Footer year
+        const yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+        // Hero autoplay YouTube embed
+        const hero = document.querySelector("[data-yt-hero]");
+        const heroId = hero?.getAttribute("data-yt-hero")?.trim();
+        if (hero && heroId && heroId !== "YOUR_HERO_VIDEO_ID") {
+          injectIframe(hero, heroId, { autoplay: 1 });
+        }
+
+        // Hover-to-play YouTube tiles
+        const previews = document.querySelectorAll(".hoverPreview[data-yt]");
+        previews.forEach((preview) => {
+          const id = preview.getAttribute("data-yt")?.trim();
+          const host = preview.querySelector(".ytEmbed");
+
+          if (!id || !host || id.startsWith("YOUR_")) return;
+
+          // write the id into the host too (keeps markup consistent)
+          host.setAttribute("data-yt", id);
+
+          const play = () => {
+            preview.classList.add("is-playing");
+            injectIframe(host, id, { autoplay: 1 });
+          };
+
+          const stop = () => {
+            preview.classList.remove("is-playing");
+            clearIframe(host);
+          };
+
+          preview.addEventListener("pointerenter", play);
+          preview.addEventListener("pointerleave", stop);
+        });
+      });
+    </script>
+  </body>
+</html>

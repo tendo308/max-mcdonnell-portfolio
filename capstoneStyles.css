@@ -1,0 +1,185 @@
+/* capstone-only tweaks */
+.heroVideo {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+body {
+  background: url("assets/capstone_bg.webp") center / cover no-repeat fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.moveGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.movePanel {
+  background: var(--c3);
+}
+
+.subSection {
+  margin-top: 2rem; /* spacing between chunks */
+}
+.subSection:first-of-type {
+  margin-top: 0;
+}
+
+.movePanel__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: cover;
+  background: #000;
+}
+
+.movePanel__title {
+  padding: 0.6rem 0.75rem;
+  border-top: 1px solid var(--line);
+  font-weight: 800;
+  color: var(--c4); /* your accent */
+}
+
+.at_a_glance {
+  font-weight: 800;
+  color: var(--c4); /* your accent */
+}
+
+graphStack {
+  display: grid;
+  gap: 1rem; /* vertical spacing between rows */
+}
+
+.graphRow {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr; /* image wider than text */
+  gap: 1rem;
+  background: var(--c3);
+  border: 1px solid var(--line);
+  padding: 1rem;
+}
+
+.graphRow__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* important for graphs (no cropping) */
+  background: transparent;
+}
+
+.graphRow__text {
+  border-left: 1px solid var(--line);
+  padding-left: 1rem;
+}
+
+.graphRow__title {
+  font-weight: 800;
+  color: var(--c4);
+  margin-bottom: 0.4rem;
+}
+
+.heatmap__media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  object-fit: cover;
+  background: #000;
+}
+
+.heatmapStack {
+  display: grid;
+  gap: 1rem;
+}
+
+.heatmapRow {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1rem;
+  background: var(--c3);
+  border: 1px solid var(--line);
+  padding: 1rem;
+}
+
+.heatmapRow__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* keep heatmaps readable */
+  background: transparent;
+}
+
+.heatmapRow__text {
+  border-left: 1px solid var(--line);
+  padding-left: 1rem;
+}
+
+.heatmapRow__title {
+  font-weight: 800;
+  color: var(--c4);
+  margin-bottom: 0.4rem;
+}
+
+.screenshot__image {
+  margin-left: auto;
+  margin-right: auto ;
+    margin-bottom: 1rem;
+  width: 75%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+}
+
+
+/* Responsive breakpoints */
+@media (max-width: 980px) {
+  .moveGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .moveGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .graphRow {
+    grid-template-columns: 1fr;
+  }
+  .graphRow__text {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .heatmapRow {
+    grid-template-columns: 1fr;
+  }
+  .heatmapRow__text {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .capGallery {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Max McDonnell — Game Designer Portfolio</title>
+    <meta
+      name="description"
+      content="Game design portfolio: mechanics, level design, Unity C#."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- YouTube embed helpers (you can move this into styles.css later) -->
+    <style>
+      /* Make injected iframes behave like your old hoverPreview videos */
+      .ytEmbed {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .ytEmbed iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        pointer-events: none; /* keeps your card links clickable */
+      }
+
+      /* Optional: if you want a YouTube background later, this supports it */
+      .bgVideo__yt {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .bgVideo__yt iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Background video (local). To switch to YouTube bg later, set data-yt-bg="VIDEO_ID" below. -->
+    <div class="bgVideo" aria-hidden="true">
+      <div class="bgVideo__yt" data-yt-bg=""></div>
+
+      <video
+        class="bgVideo__vid"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      >
+        <source src="assets/bg.webm" type="video/webm" />
+        <source src="assets/bg.mp4" type="video/mp4" />
+      </video>
+
+      <div class="bgVideo__overlay"></div>
+    </div>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Top banner -->
+    <header class="topbar" role="banner">
+      <div class="wrap topbar__inner">
+        <div class="brand">
+          <div class="brand__name">Max McDonnell</div>
+          <div class="brand__spec">Gameplay / Level Designer and Programmer</div>
+        </div>
+
+        <div class="topbar__right">
+          <nav class="nav" aria-label="Links">
+            <a href="capstone.html">Capstone</a>
+
+            <a
+              href="https://www.linkedin.com/in/max-mcdonnell-1b6b4a391/"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+
+            <a
+              href="https://max-mcdonnell.itch.io/"
+              target="_blank"
+              rel="noreferrer"
+              >itch.io</a
+            >
+
+            <!-- <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a> -->
+
+            <a
+              href="assets/Max_McDonnell_Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >Resume</a
+            >
+
+            <a href="aboutme.html">About me</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="wrap" tabindex="-1">
+      <!-- About -->
+      <section class="block" aria-label="About me">
+        <p class="lead">
+          <strong><a href="aboutme.html">Hey, I'm Max</a></strong>
+        </p>
+
+        <p class="lead__section">
+          I'm a Unity-focused game designer specializing in mechanics and level
+          design with experience in C# programming. I love designing unique
+          mechanics that challenge players and then building interesting levels
+          that push those ideas to their full potential.
+        </p>
+      </section>
+
+      <!-- Capstone -->
+      <section class="section">
+        <h2 class="h2">Capstone Project</h2>
+
+        <div class="capstone">
+          <a
+            class="capstone__media hoverPreview"
+            href="capstone.html"
+            aria-label="Open capstone case study"
+          >
+            <img
+              class="hoverPreview__poster"
+              src="assets/derdodazza_poster.jpg"
+              alt="Dero Dazza’s Dirty Dash preview"
+            />
+
+            <!-- Replace data-yt with your YouTube ID -->
+            <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+          </a>
+
+          <div class="capstone__info">
+            <h3 class="h3">
+              <a href="capstone.html">Dero Dazza’s Dirty Dash (2025)</a>
+            </h3>
+            <h4 class="h4">Winner of RMIT’s Program Excellence Award</h4>
+
+            <ul class="bullets">
+              <li>Lead Designer & Unity Developer (C#)</li>
+              <li>Gameplay Programmer</li>
+              <li>Environment Designer</li>
+              <li>Playtesting + exhibition analytics (heatmaps/graphs)</li>
+              <li>UI/UX Designer</li>
+            </ul>
+
+            <p>
+              Dero Dazza's Dirty Dash is a high-octane 3D speedrun platformer.
+              You play as the Australian eshay legend Dero Dazza as you zoom
+              through the suburbs of Melbourne.
+            </p>
+
+            <p class="capstone__exhibit muted">
+              Exhibited at
+              <a
+                href="https://www.acmi.net.au/whats-on/acmi-rmit-audience-lab/nov-2025/"
+                target="_blank"
+                rel="noreferrer"
+                >ACMI Audience Lab</a
+              >
+              and
+              <a
+                href="https://www.rmitgamedesignshowcase.com/"
+                target="_blank"
+                rel="noreferrer"
+                >RMIT Grad Show</a
+              >.
+            </p>
+
+            <a class="linkhint" href="capstone.html"
+              ><strong>See more →</strong></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Other projects -->
+      <section class="section" id="projects">
+        <h2 class="h2">Other Projects</h2>
+
+        <div class="projectGrid">
+          <!-- Project 1 -->
+          <a
+            class="projectCard"
+            href="https://max-mcdonnell.itch.io/terrongle"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="projectCard__media hoverPreview">
+              <img
+                class="hoverPreview__poster"
+                src="assets/project1_poster.jpg"
+                alt="Terrongle preview"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+            </div>
+
+            <div class="projectCard__body">
+              <div class="projectCard__title">Terrongle (2024)</div>
+              <div class="projectCard__subtitle muted">Solo Developer</div>
+              <p class="projectCard__desc muted">
+                Exhibited at Sabby. 2D speedrun platformer made for my Game a Week
+                class based on the theme “10 seconds or less”.
+              </p>
+              <div class="projectCard__meta muted">⏱ 1 week • Unity • C#</div>
+            </div>
+          </a>
+
+          <!-- Project 2 -->
+          <a
+            class="projectCard"
+            href="https://max-mcdonnell.itch.io/psilo"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="projectCard__media hoverPreview">
+              <img
+                class="hoverPreview__poster"
+                src="assets/project2_poster.jpg"
+                alt="PSILO preview"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+            </div>
+
+            <div class="projectCard__body">
+              <div class="projectCard__title">PSILO (2024)</div>
+              <div class="projectCard__subtitle muted">
+                Gameplay/Level Design and Programming
+              </div>
+              <p class="projectCard__desc muted">
+                Passion project with friends — a 2D tower defence roguelike.
+              </p>
+              <div class="projectCard__meta muted">⏱ 2 months • Unity • C#</div>
+            </div>
+          </a>
+
+          <!-- Project 3 -->
+          <a
+            class="projectCard"
+            href="https://max-mcdonnell.itch.io/look-and-see"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="projectCard__media hoverPreview">
+              <img
+                class="hoverPreview__poster"
+                src="assets/project3_poster.jpg"
+                alt="Look and See preview"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+            </div>
+
+            <div class="projectCard__body">
+              <div class="projectCard__title">Look and See (2024)</div>
+              <div class="projectCard__subtitle muted">Solo Developer</div>
+              <p class="projectCard__desc muted">
+                A first-person 3D experience using a shader I made for my Game a Week class.
+              </p>
+              <div class="projectCard__meta muted">
+                ⏱ 1 week • Unity • C# + Shader Graph
+              </div>
+            </div>
+          </a>
+
+          <!-- Project 4 -->
+          <a
+            class="projectCard"
+            href="https://max-mcdonnell.itch.io/uninhabited-island"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="projectCard__media hoverPreview">
+              <img
+                class="hoverPreview__poster"
+                src="assets/project4_poster.jpg"
+                alt="Laser Temple preview"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+            </div>
+
+            <div class="projectCard__body">
+              <div class="projectCard__title">Laser Temple</div>
+              <div class="projectCard__subtitle muted">
+                Gameplay/Level Design and Programming
+              </div>
+              <p class="projectCard__desc muted">
+                One of my first games — made with a friend, and I’m still pretty proud of it.
+              </p>
+              <div class="projectCard__meta muted">
+                ⏱ 6 weeks • GameMaker • GML
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Level/World Design -->
+      <section class="section" id="world">
+        <h2 class="h2">Level/World Design</h2>
+
+        <div class="projectGrid">
+          <a
+            class="projectCard"
+            href="https://max-mcdonnell.itch.io/terrongle"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="projectCard__media hoverPreview">
+              <img
+                class="hoverPreview__poster"
+                src="assets/world_building_poster1.jpg"
+                alt="Anglers Rest preview"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+            </div>
+
+            <div class="projectCard__body">
+              <div class="projectCard__title">Anglers Rest (2025)</div>
+              <div class="projectCard__subtitle muted">Solo Developer</div>
+              <p class="projectCard__desc muted">
+                University project focused on atmosphere and guiding the player through the space.
+              </p>
+              <div class="projectCard__meta muted">
+                ⏱ 11 weeks • Unity • Blender • Substance Painter
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="projectCard"
+            href="https://max-mcdonnell.itch.io/terrongle"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="projectCard__media hoverPreview">
+              <img
+                class="hoverPreview__poster"
+                src="assets/world_building_poster2.jpg"
+                alt="Desert Temple preview"
+              />
+              <div class="hoverPreview__video ytEmbed" data-yt=""></div>
+            </div>
+
+            <div class="projectCard__body">
+              <div class="projectCard__title">Desert Temple (2024)</div>
+              <div class="projectCard__subtitle muted">Solo Developer</div>
+              <p class="projectCard__desc muted">
+                Level entrance study — aimed to feel believable in an open world rather than forced.
+              </p>
+              <div class="projectCard__meta muted">
+                ⏱ 11 weeks • UE5 • Blender • Substance Painter
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section" id="education">
+        <h2 class="h2">Education</h2>
+        <div class="block">
+          <p>
+            <strong>RMIT University</strong> — Bachelor of Design (Games) 2023–2025
+          </p>
+        </div>
+      </section>
+
+      <!-- Technical Experience -->
+      <section class="section" id="tech">
+        <h2 class="h2">Technical Experience</h2>
+        <ul class="techList">
+          <li>Unity</li>
+          <li>C#</li>
+          <li>UE5</li>
+          <li>Blender</li>
+          <li>GitHub</li>
+          <li>Substance Painter</li>
+          <li>Photoshop</li>
+          <li>Reaper</li>
+          <li>Premiere Pro</li>
+          <li>Maya</li>
+          <li>Microsoft Suite</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p class="footer__text">
+          © <span id="year"></span> Max McDonnell. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // ---------- Utilities ----------
+      const ytSrc = (id, { autoplay = 1 } = {}) => {
+        const base = "https://www.youtube-nocookie.com/embed/";
+        const params = new URLSearchParams({
+          autoplay: String(autoplay),
+          mute: "1",
+          controls: "0",
+          rel: "0",
+          modestbranding: "1",
+          playsinline: "1",
+          iv_load_policy: "3",
+          loop: "1",
+          playlist: id, // required for looping
+        });
+        return `${base}${id}?${params.toString()}`;
+      };
+
+      const injectIframe = (hostEl, id, { autoplay = 1 } = {}) => {
+        if (!hostEl || !id) return null;
+        if (hostEl.querySelector("iframe")) return hostEl.querySelector("iframe");
+
+        const iframe = document.createElement("iframe");
+        iframe.src = ytSrc(id, { autoplay });
+        iframe.title = "YouTube video preview";
+        iframe.loading = "lazy";
+        iframe.allow =
+          "autoplay; encrypted-media; picture-in-picture";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        hostEl.appendChild(iframe);
+        return iframe;
+      };
+
+      const clearIframe = (hostEl) => {
+        const iframe = hostEl?.querySelector("iframe");
+        if (iframe) iframe.remove();
+      };
+
+      // ---------- Run after DOM is ready ----------
+      window.addEventListener("DOMContentLoaded", () => {
+        // Footer year
+        const yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+        // Optional: YouTube background (if you set data-yt-bg="VIDEO_ID")
+        const bgHost = document.querySelector("[data-yt-bg]");
+        const bgId = bgHost?.getAttribute("data-yt-bg")?.trim();
+        if (bgHost && bgId) {
+          injectIframe(bgHost, bgId, { autoplay: 1 });
+
+          // Hide local background video to save bandwidth if YouTube bg is enabled
+          const localBgVid = document.querySelector(".bgVideo__vid");
+          if (localBgVid) {
+            try {
+              localBgVid.pause();
+            } catch (_) {}
+            localBgVid.style.display = "none";
+          }
+        }
+
+        // Hover-to-play YouTube previews (loads iframe only on hover)
+        const previews = document.querySelectorAll(".hoverPreview");
+
+        previews.forEach((preview) => {
+          const host = preview.querySelector(".ytEmbed[data-yt]");
+          if (!host) return;
+
+          const id = host.getAttribute("data-yt")?.trim();
+          if (!id) return; // nothing to play until you set data-yt
+
+          const play = () => {
+            preview.classList.add("is-playing");
+            injectIframe(host, id, { autoplay: 1 });
+          };
+
+          const stop = () => {
+            preview.classList.remove("is-playing");
+            clearIframe(host);
+          };
+
+          preview.addEventListener("pointerenter", play);
+          preview.addEventListener("pointerleave", stop);
+        });
+      });
+    </script>
+  </body>
+</html>

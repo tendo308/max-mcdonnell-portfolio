@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Max McDonnell — About</title>
+    <meta
+      name="description"
+      content="About Max McDonnell — game designer focused on mechanics, level design, and Unity/C#."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Background video -->
+    <div class="bgVideo" aria-hidden="true">
+      <video
+        class="bgVideo__vid"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      >
+        <source src="assets/bg.webm" type="video/webm" />
+        <source src="assets/bg.mp4" type="video/mp4" />
+      </video>
+      <div class="bgVideo__overlay"></div>
+    </div>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Top banner -->
+    <header class="topbar" role="banner">
+      <div class="wrap topbar__inner">
+        <div class="brand">
+          <div class="brand__name">
+            <a href="index.html" rel="noreferrer">Max McDonnell</a>
+          </div>
+          <div class="brand__spec">Gameplay / Level Designer and Programmer</div>
+        </div>
+
+        <div class="topbar__right">
+          <nav class="nav" aria-label="Links">
+            <a href="index.html">Home</a>
+            <a
+              href="https://www.linkedin.com/in/max-mcdonnell-1b6b4a391/"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+            <a
+              href="https://max-mcdonnell.itch.io/"
+              target="_blank"
+              rel="noreferrer"
+              >itch.io</a
+            >
+            <a
+              href="assets/Max_McDonnell_Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >Resume</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="wrap" tabindex="-1">
+      <section class="section">
+        <h2 class="h2">About me</h2>
+
+        <div class="block" aria-label="About me">
+          <img
+            class="profile__image"
+            src="assets/aboutme/profile.jpg"
+            alt="Portrait of Max McDonnell"
+          />
+
+          <p class="lead"><strong>Hey again,</strong></p>
+
+          <p class="lead__section">
+            I’m a game designer interested in mechanics, level design,
+            programming, and world building. Having recently graduated from
+            RMIT’s Bachelor of Design (Games), I’m excited to start my career.
+          </p>
+
+          <p class="lead__section">
+            I love learning new things and pouring my passion into creating
+            games. One of my strengths is having a clear vision for what I want,
+            then focusing hard to make it a reality.
+          </p>
+
+          <p class="lead__section">
+            Outside of game development, I love playing piano and guitar,
+            hiking, cooking, gardening, hanging out with my cat and friends,
+            board games, op-shopping, listening to music, and (of course) playing
+            games.
+          </p>
+
+          <p class="lead__section">
+            Some of my favourite games include: Bloodborne, Terraria, Dark
+            Souls, Portal 2, and ULTRAKILL.
+          </p>
+
+          <p class="lead"><strong>Contact</strong></p>
+
+          <p class="lead__section">
+            <a
+              href="https://www.linkedin.com/in/max-mcdonnell-1b6b4a391/"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+          </p>
+
+          <p class="lead__section">
+            <a href="mailto:maxmcd1104@gmail.com">maxmcd1104@gmail.com</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p class="footer__text">
+          © <span id="year"></span> Max McDonnell. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+      });
+    </script>
+  </body>
+</html>
