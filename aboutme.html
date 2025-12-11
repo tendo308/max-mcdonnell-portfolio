@@ -20,8 +20,11 @@
   </head>
 
   <body>
-    <!-- Background video -->
+    <!-- Background video (local, with optional YouTube override via data-yt-bg) -->
     <div class="bgVideo" aria-hidden="true">
+      <!-- Set data-yt-bg to a YouTube ID or URL to use YouTube instead of the local MP4 -->
+      <div class="bgVideo__yt" data-yt-bg="https://youtu.be/Xx5eWs2N4zc"></div>
+
       <video
         class="bgVideo__vid"
         autoplay
@@ -45,7 +48,9 @@
           <div class="brand__name">
             <a href="index.html" rel="noreferrer">Max McDonnell</a>
           </div>
-          <div class="brand__spec">Gameplay / Level Designer and Programmer</div>
+          <div class="brand__spec">
+            Gameplay / Level Designer and Programmer
+          </div>
         </div>
 
         <div class="topbar__right">
@@ -102,8 +107,8 @@
           <p class="lead__section">
             Outside of game development, I love playing piano and guitar,
             hiking, cooking, gardening, hanging out with my cat and friends,
-            board games, op-shopping, listening to music, and (of course) playing
-            games.
+            board games, op-shopping, listening to music, and (of course)
+            playing games.
           </p>
 
           <p class="lead__section">
@@ -137,11 +142,7 @@
       </div>
     </footer>
 
-    <script>
-      window.addEventListener("DOMContentLoaded", () => {
-        const yearEl = document.getElementById("year");
-        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-      });
-    </script>
+    <!-- Shared JS for YouTube embeds, background, footer year, etc. -->
+    <script src="scripts.js" defer></script>
   </body>
 </html>

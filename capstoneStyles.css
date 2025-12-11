@@ -1,11 +1,14 @@
-/* capstone-only tweaks */
+/* ================================
+   Capstone page background & hero
+   ================================ */
 .heroVideo {
+  position: relative;
   aspect-ratio: 16 / 9;
   width: 100%;
-  display: block;
-  object-fit: cover;
+  background: #000;
 }
 
+/* Capstone background image + dark overlay (handled via body::before) */
 body {
   background: url("assets/capstone_bg.webp") center / cover no-repeat fixed;
 }
@@ -19,44 +22,63 @@ body::before {
   z-index: -1;
 }
 
+/* ================================
+   Movement tiles / panels
+   ================================ */
 .moveGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
+/* On capstone page, we always show the video layer (no hover gating) */
+.hoverPreview__video {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .movePanel {
   background: var(--c3);
 }
 
+/* Spacing between sub-sections on capstone page */
 .subSection {
-  margin-top: 2rem; /* spacing between chunks */
+  margin-top: 2rem;
 }
 .subSection:first-of-type {
   margin-top: 0;
 }
 
+/* Media inside movement panels */
 .movePanel__media {
   width: 100%;
   aspect-ratio: 16 / 9;
   display: block;
   object-fit: cover;
   background: #000;
+  position: relative;
+  overflow: hidden;
 }
 
 .movePanel__title {
   padding: 0.6rem 0.75rem;
-  border-top: 1px solid var(--line);
+
   font-weight: 800;
-  color: var(--c4); /* your accent */
+  color: var(--c4);
 }
 
+/* Accent labels (e.g., Role, Team) */
 .at_a_glance {
   font-weight: 800;
-  color: var(--c4); /* your accent */
+  color: var(--c4);
 }
 
-graphStack {
+/* ================================
+   Graphs + heatmaps layout
+   ================================ */
+
+/* Stack of graph rows */
+.graphStack {
   display: grid;
   gap: 1rem; /* vertical spacing between rows */
 }
@@ -89,6 +111,7 @@ graphStack {
   margin-bottom: 0.4rem;
 }
 
+/* Heatmap rows */
 .heatmap__media {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -130,10 +153,13 @@ graphStack {
   margin-bottom: 0.4rem;
 }
 
+/* ================================
+   Screenshots
+   ================================ */
 .screenshot__image {
   margin-left: auto;
-  margin-right: auto ;
-    margin-bottom: 1rem;
+  margin-right: auto;
+  margin-bottom: 1rem;
   width: 75%;
   height: auto;
   display: block;
@@ -141,8 +167,9 @@ graphStack {
   background: transparent;
 }
 
-
-/* Responsive breakpoints */
+/* ================================
+   Responsive tweaks
+   ================================ */
 @media (max-width: 980px) {
   .moveGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
